@@ -494,15 +494,6 @@ public:
     // Number of elements in NZYX in allocated memory
     long int nzyxdimAlloc;
 
-	void *operator new(size_t size)
-	{
-		return _mm_malloc(size, 64);
-	}
-	void operator delete(void *p)
-	{
-		_mm_free(p);
-	}
-
 public:
     /// @name Constructors
     //@{
