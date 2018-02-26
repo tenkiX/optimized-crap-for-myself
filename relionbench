@@ -1,0 +1,24 @@
+#!/bin/sh
+mkdir Class2D_OptV2_1
+echo "------------- Relion benchmark Class2D_OptV2_1-------------" |& tee -a OptV2Bench.txt
+(time mpirun -n 4 ~/gergo/relionOptimizedV2/installed/bin/relion_refine_mpi --o Class2D_OptV2_1/job --i particles.star --ctf --iter 25 --tau2_fudge 2 --particle_diameter 150 --K 100 --flatten_solvent --zero_mask --strict_highres_exp 8 --oversampling 1 --psi_step 12 --offset_range 5 --offset_step 2 --norm --scale --j 6 --gpu) |& tee -a OptV2Bench.txt
+
+mkdir Class2D_OptV2_2
+echo "------------- Relion benchmark Class2D_OptV2_2-------------" |& tee -a OptV2Bench.txt
+(time mpirun -n 4 ~/gergo/relionOptimizedV2/installed/bin/relion_refine_mpi --o Class2D_OptV2_2/job --i particles.star --ctf --iter 25 --tau2_fudge 2 --particle_diameter 150 --K 100 --flatten_solvent --zero_mask --strict_highres_exp 8 --oversampling 1 --psi_step 12 --offset_range 5 --offset_step 2 --norm --scale --j 6 --gpu) |& tee -a OptV2Bench.txt
+
+mkdir Class2D_OptV2_3
+echo "------------- Relion benchmark Class2D_OptV2_3-------------" |& tee -a OptV2Bench.txt
+(time mpirun -n 4 ~/gergo/relionOptimizedV2/installed/bin/relion_refine_mpi --o Class2D_OptV2_3/job --i particles.star --ctf --iter 25 --tau2_fudge 2 --particle_diameter 150 --K 100 --flatten_solvent --zero_mask --strict_highres_exp 8 --oversampling 1 --psi_step 12 --offset_range 5 --offset_step 2 --norm --scale --j 6 --gpu) |& tee -a OptV2Bench.txt
+
+mkdir Class2D_Base_1
+echo "------------- Relion benchmark Class2D_Base_1-------------" |& tee -a BaseBench.txt
+(time mpirun -n 4 ~/gergo/relionOptimizedV2/installed/bin/relion_refine_mpi --o Class2D_Base_1/job --i particles.star --ctf --iter 25 --tau2_fudge 2 --particle_diameter 150 --K 100 --flatten_solvent --zero_mask --strict_highres_exp 8 --oversampling 1 --psi_step 12 --offset_range 5 --offset_step 2 --norm --scale --j 6 --gpu) |& tee -a BaseBench.txt
+
+mkdir Class2D_Base_2
+echo "------------- Relion benchmark Class2D_Base_2-------------" |& tee -a BaseBench.txt
+(time mpirun -n 4 ~/gergo/relionOptimizedV2/installed/bin/relion_refine_mpi --o Class2D_Base_2/job --i particles.star --ctf --iter 25 --tau2_fudge 2 --particle_diameter 150 --K 100 --flatten_solvent --zero_mask --strict_highres_exp 8 --oversampling 1 --psi_step 12 --offset_range 5 --offset_step 2 --norm --scale --j 6 --gpu) |& tee -a BaseBench.txt
+
+mkdir Class2D_Base_3
+echo "------------- Relion benchmark Class2D_Base_3-------------" |& tee -a BaseBench.txt
+(time mpirun -n 4 ~/gergo/relionOptimizedV2/installed/bin/relion_refine_mpi --o Class2D_Base_3/job --i particles.star --ctf --iter 25 --tau2_fudge 2 --particle_diameter 150 --K 100 --flatten_solvent --zero_mask --strict_highres_exp 8 --oversampling 1 --psi_step 12 --offset_range 5 --offset_step 2 --norm --scale --j 6 --gpu) |& tee -a BaseBench.txt
